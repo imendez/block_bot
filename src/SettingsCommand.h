@@ -1,6 +1,9 @@
 #ifndef BLOCK_BOT_SETTINGSCOMMAND_H
 #define BLOCK_BOT_SETTINGSCOMMAND_H
 
+#include <iostream>
+#include <map>
+#include <vector>
 
 #include "Command.h"
 

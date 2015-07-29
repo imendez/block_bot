@@ -1,7 +1,3 @@
-#include <iostream>
-#include <map>
-#include <vector>
-
 #include "SettingsCommand.h"
 
 void SettingsCommand::doStuff() {
@@ -17,10 +13,12 @@ void SettingsCommand::doStuff() {
 }
 
 SettingsCommand::SettingsCommand(Game *game) : Command(game) {
-    settings_["timebank"] = &Game::setTimeBank;
-    settings_["time_per_move"] = &Game::setTimePerMove;
-    settings_["player_names"] = &Game::setPlayerNames;
-    settings_["your_bot"] = &Game::setBotName;
-    settings_["field_width"] = &Game::setFieldWidth;
-    settings_["field_height"] = &Game::setFieldHeight;
+    settings_ = {
+            {"timebank",      &Game::setTimeBank},
+            {"time_per_move", &Game::setTimePerMove},
+            {"player_names",  &Game::setPlayerNames},
+            {"your_bot",      &Game::setBotName},
+            {"field_width",   &Game::setFieldWidth},
+            {"field_height",  &Game::setFieldHeight}
+    };
 }

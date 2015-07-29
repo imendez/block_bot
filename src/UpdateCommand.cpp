@@ -18,14 +18,16 @@ void UpdateCommand::doStuff() {
 }
 
 UpdateCommand::UpdateCommand(Game *game) : Command(game) {
-    commands_["game_round"] = &Game::setRound;
-    commands_["game_this_piece_type"] = &Game::setCurrentPiece;
-    commands_["game_next_piece_type"] = &Game::setNextPiece;
-    commands_["game_this_piece_position"] = &Game::setCurrentPiecePosition;
-    commands_["player1_row_points"] = &Game::setPlayer1RowPoints;
-    commands_["player1_combo"] = &Game::setPlayer1Combo;
-    commands_["player1_field"] = &Game::setPlayer1Field;
-    commands_["player2_row_points"] = &Game::setPlayer2RowPoints;
-    commands_["player2_combo"] = &Game::setPlayer2Combo;
-    commands_["player2_field"] = &Game::setPlayer2Field;
+    commands_ = {
+            {"game_round",               &Game::setRound},
+            {"game_this_piece_type",     &Game::setCurrentPiece},
+            {"game_next_piece_type",     &Game::setNextPiece},
+            {"game_this_piece_position", &Game::setCurrentPiecePosition},
+            {"player1_row_points",       &Game::setPlayer1RowPoints},
+            {"player1_combo",            &Game::setPlayer1Combo},
+            {"player1_field",            &Game::setPlayer1Field},
+            {"player2_row_points",       &Game::setPlayer2RowPoints},
+            {"player2_combo",            &Game::setPlayer2Combo},
+            {"player2_field",            &Game::setPlayer2Field},
+    };
 }
